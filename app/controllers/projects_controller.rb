@@ -23,6 +23,11 @@ class ProjectsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find(params[:id])
+    render :edit
+  end
+
   private
 
   def project_params
