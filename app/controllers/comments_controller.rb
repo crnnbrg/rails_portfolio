@@ -30,6 +30,13 @@ class CommentsController < ApplicationController
     end
   end
 
+  def destroy
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.find(params[:id])
+    @comment.destroy
+    redirect_to projects_path
+  end
+
   private
 
   def comment_params
