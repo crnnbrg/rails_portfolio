@@ -14,6 +14,12 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.find(params[:id])
+    render :edit
+  end
+
   private
 
   def comment_params
