@@ -8,4 +8,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     render :show
   end
+
+  def new
+    @project = Project.new
+    render :new
+  end
 end
