@@ -1,5 +1,25 @@
 <h1><%= @project.title %></h1>
 
+<% if @project.comments.any? %>
+  <h4>Here are the reviews for this project:</h4>
+
+  <ul>
+    <% @project.comments.each do |comment| %>
+      <li>
+        <%= comment.review %> |
+        <%= link_to "Edit", edit_project_comment_path(@project, comment) %> |
+        <%= link_to "Delete", project_comment_path(@project, comment),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %>
+
+
+<p><%= link_to "Add a comment", new_project_comment_path(@project) %></p>
 <p><%= link_to "Edit", edit_project_path(@project) %></p>
  <p><%= link_to "Delete", project_path(@project),
                           :data => {:confirm => "Are you sure?",
