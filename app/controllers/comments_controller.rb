@@ -20,6 +20,16 @@ class CommentsController < ApplicationController
     render :edit
   end
 
+  def update
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to projects_path
+    else
+      render :edit
+    end
+  end
+
   private
 
   def comment_params
