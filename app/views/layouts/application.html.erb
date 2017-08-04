@@ -55,8 +55,11 @@ crossorigin="anonymous"></script>
 </nav>
 </div>
 
-<%= flash[:alert] %>
-  <%= flash[:notice] %>
+<div class="app">
+    <%= flash[:alert] %>
+    <%= flash[:notice] %>
+
     <%= yield %>
+  </div>
   </body>
 </html>
