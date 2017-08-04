@@ -1,22 +1,20 @@
 class ProjectsController < ApplicationController
   def index
     @projects = Project.all
-    render :index
   end
 
   def show
     @project = Project.find(params[:id])
-    render :show
   end
 
   def new
     @project = Project.new
-    render :new
   end
 
   def create
     @project = Project.new(project_params)
     if @project.save
+      flash[:notice] = 'Project added successfully!'
       redirect_to projects_path
     else
       render :new
@@ -31,6 +29,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(project_params)
+      flash[:notice] = 'Project updated successfully!'
       redirect_to projects_path
     else
       render :edit
@@ -40,6 +39,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
+    flash[:notice] = 'Project delete successfull!'
     redirect_to projects_path
   end
 

@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @project = Project.find(params[:project_id])
     @comment = @project.comments.new(comment_params)
     if @comment.save
+      flash[:notice] = 'Comment added successfully!'
       redirect_to project_path(@comment.project)
     else
       render :new
@@ -17,13 +18,13 @@ class CommentsController < ApplicationController
   def edit
     @project = Project.find(params[:project_id])
     @comment = @project.comments.find(params[:id])
-    render :edit
   end
 
   def update
     @project = Project.find(params[:project_id])
     @comment = @project.comments.find(params[:id])
     if @comment.update(comment_params)
+      flash[:notice] = 'Comment updated successfully!'
       redirect_to projects_path
     else
       render :edit
@@ -34,6 +35,7 @@ class CommentsController < ApplicationController
     @project = Project.find(params[:project_id])
     @comment = @project.comments.find(params[:id])
     @comment.destroy
+    flash[:notice] = 'Comment deleted successfully!'
     redirect_to projects_path
   end
 
