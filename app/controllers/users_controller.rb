@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
-      lash[:notice] = 'User updated successfully!'
+      flash[:notice] = 'User updated successfully!'
       redirect_to users_path
     else
       render :edit
@@ -42,12 +42,13 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
+    flash[:notice] = 'User destroyed!'
     redirect_to users_path
   end
 
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :username, :password)
+    params.require(:user).permit(:name, :email, :username, :password, :password_confirmation, :project_id)
   end
 end

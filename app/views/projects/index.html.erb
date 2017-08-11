@@ -5,6 +5,8 @@
     <% @projects.each do |project| %>
       <li><%= link_to project.title, project_path(project) %></li>
       <br>
+      <br>
+        <%= question.created_at%>
     <% end %>
   </ul>
 

@@ -1,3 +1,30 @@
 <h1>New user</h1>
 
-<%= render "form" %>
+  <% if @user.errors.any? %>
+    <h3>Oops there were some errors. Please try again:</h3>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <br>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+    <br>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br>
+
+    <%= f.submit  %>
+  <% end %>
