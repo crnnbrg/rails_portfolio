@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  # before_filter :authorize, only: %i[edit update]
   def new
     @project = Project.find(params[:project_id])
     @comment = @project.comments.new
