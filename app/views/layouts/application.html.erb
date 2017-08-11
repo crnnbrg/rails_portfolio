@@ -54,13 +54,13 @@ crossorigin="anonymous"></script>
 
       <div class="user_tab">
         <% if current_user %>
-        Logged in as <%= current_user.username %>
-        <%= link_to "Log Out", session_path("current"), method: "delete" %>
-        <%else%
-          <%= link_to "Sign Up", new_user_path%> Or
-          <%= link_to "Log In", new_session_path%>
+          Logged in as <%= current_user.username %>
+          <%= link_to "Log Out", logout_path %>
+          <% else %>
+          <%= link_to "Sign Up", signup_path%> Or
+          <%= link_to "Log In", login_path%>
           <% end %>
-      </div>
+          </div>
 
     </ul>
   </div><!-- /.navbar-collapse -->
@@ -70,12 +70,14 @@ crossorigin="anonymous"></script>
 
 <div class="app">
   <div class="user_tab">
-    <% if current_user %>
-    Logged in as <%= current_user.username %>
-      <%= link_to "Sign Up", new_user_path%> Or
-      <%= link_to "Log In", new_session_path%>
-      <% end %>
-  </div>
+        <% if current_user %>
+          Logged in as <%= current_user.username %>
+          <%= link_to "Log Out", logout_path %>
+          <% else %>
+          <%= link_to "Sign Up", signup_path%> Or
+          <%= link_to "Log In", login_path%>
+          <% end %>
+          </div>
     <%= flash[:alert] %>
     <%= flash[:notice] %>
 
