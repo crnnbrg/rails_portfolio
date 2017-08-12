@@ -18,7 +18,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = 'User added successfully!'
+      flash[:notice] = 'Thanks for signing up!'
       redirect_to root_url
     else
       render :new
