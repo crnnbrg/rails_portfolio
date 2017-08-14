@@ -78,8 +78,8 @@ crossorigin="anonymous"></script>
           <%= link_to "Log In", login_path%>
           <% end %>
           </div>
-    <%= flash[:alert] %>
-    <%= flash[:notice] %>
+          <p class="notice"><%= notice %></p>
+             <p class="alert"><%= alert %></p>
 
     <%= yield %>
   </div>
