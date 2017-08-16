@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  # before_filter :authorize, only: %i[edit update]
+  before_action :authenticate_user!
   def new
     @project = Project.find(params[:project_id])
     @comment = @project.comments.new
@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   def create
     @project = Project.find(params[:project_id])
     @comment = @project.comments.new(comment_params)
+    @user = @comment.user
     if @comment.save
       flash[:notice] = 'Comment added successfully!'
       redirect_to project_path(@comment.project)
@@ -43,6 +44,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:review)
+    params.require(:comment).permit(:review, :user_id)
   end
 end
