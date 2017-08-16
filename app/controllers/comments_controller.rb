@@ -5,6 +5,14 @@ class CommentsController < ApplicationController
     @comment = @project.comments.new
   end
 
+  def show
+    @project = Project.find(params[:project_id])
+    @comment = @project.comments.find(params[:id])
+    @comment.destroy
+    flash[:notice] = 'Comment deleted successfully!'
+    redirect_to projects_path
+  end
+
   def create
     @project = Project.find(params[:project_id])
     @comment = @project.comments.new(comment_params)
