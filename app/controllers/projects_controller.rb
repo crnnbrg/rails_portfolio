@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       flash[:notice] = 'Project added successfully!'
-      redirect_to projects_path
+      redirect_to projects_path(@project)
     else
       render :new
     end
@@ -30,7 +30,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     if @project.update(project_params)
       flash[:notice] = 'Project updated successfully!'
-      redirect_to projects_path
+      redirect_to projects_path(@project)
     else
       render :edit
     end
@@ -40,12 +40,12 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     flash[:notice] = 'Project delete successfull!'
-    redirect_to projects_path
+    redirect_to projects_path(@project)
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:title, :image, :link, :skill, :picture)
+    params.require(:project).permit(:title, :link, :skill, :picture)
   end
 end

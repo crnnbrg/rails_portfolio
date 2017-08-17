@@ -1,8 +1,10 @@
 <h1>Projects</h1>
 <%= image_tag "kitchen.jpg" %>
+<br>
 
   <ul>
     <% @projects.each do |project| %>
+
       <li><%= link_to project.title, project_path(project) %></li>
 
       <br>
@@ -11,7 +13,7 @@
     <% end %>
   </ul>
 
-  
+
 
 <% if user_signed_in? %>
   <% if current_user.admin? %>

@@ -10,10 +10,9 @@ class AdminsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:project_id])
-    @comment = @project.comments.find(params[:id])
-    @comment.destroy
-    flash[:notice] = 'Comment deleted successfully!'
-    redirect_to projects_path
+    @project = Project.find(params[:id])
+    @project.destroy
+    flash[:notice] = 'Project delete successfull!'
+    redirect_to projects_path(@project)
   end
 end

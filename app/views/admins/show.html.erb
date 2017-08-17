@@ -11,12 +11,16 @@
         <%= link_to "Delete", project_comment_path(@user, comment),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
+
       </li>
     <% end %>
   </ul>
 <% else %>
   <p>There are no reviews from this user!</p>
 <% end %>
+<p><%= link_to "Delete user", user_path(@project),
+                         :data => {:confirm => "Are you sure?",
+                                   :method => "delete"} %></p>
 
 <%= button_to "Cancel my account", registration_path(user.email), data: { confirm: "Are you sure?" }, method: :delete %>
 

@@ -1,14 +1,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.app{
+.app {
   text-align: center;
-  background-color:#f6f6ef;
+  background-color: #f6f6ef;
   width: 70%;
   margin-left: 15%;
 }
 
-.testr{
+.testr {
   background-color: #805500;
   width: 100%;
+}
+
+.project_image {
+  width: 550px;
+  height: 450px;
 }

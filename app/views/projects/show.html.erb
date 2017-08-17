@@ -1,6 +1,12 @@
-<h1><%= @project.title %></h1> <br>
-<%= image_tag @project.picture_url.to_s %>
-<a href="<%= @project.link %>"><br><%= @project.title%></a>
+<h1><a href="<%= @project.link %>"><br><%= @project.title%></a></h1>
+<%= image_tag @project.picture_url.to_s, class: 'project_image'%>
+  <br>
+  <h2>Technologies: <%= @project.skill %></h1> <br>
+  <br>
+
+
+
+
 <% if @project.comments.any? %>
   <h4>Here are the reviews for this project:</h4>
 
@@ -24,7 +30,7 @@
 <% if user_signed_in? %>
 <%= link_to "Add a comment", new_project_comment_path(@project) %>
 <% if current_user.admin? %>
-<p><%= link_to "Add a comment", new_project_comment_path(@project) %></p>
+
  <p><%= link_to "Delete", project_path(@project),
                           :data => {:confirm => "Are you sure?",
                                     :method => "delete"} %></p>
