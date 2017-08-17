@@ -33,6 +33,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 
 gem 'devise'
+gem 'twilio-ruby', '~> 4.0.0'
+gem 'phonelib'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
