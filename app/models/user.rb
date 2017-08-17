@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments
 
-  validates_uniqueness_of :mobile_number
-  validates :mobile_number, phone: { possible: false, allow_blank: true, types: [:mobile] }
+  validates_uniqueness_of :phone
+  validates :phone, phone: { possible: false, allow_blank: true, types: [:mobile] }
 
   def needs_mobile_number_verifying?
-    if is_verified || mobile_number.nil?
+    if is_verified || phone.nil?
       false
     else
       true

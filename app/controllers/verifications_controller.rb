@@ -7,7 +7,7 @@ class VerificationsController < ApplicationController
     current_user.verification_code = 1_000_000 + rand(10_000_000 - 1_000_000)
     current_user.save
 
-    to = current_user.mobile_number
+    to = current_user.phone
 
     @twilio_client = Twilio::REST::Client.new ENV['TWILIO_SID'], ENV['TWILIO_TOKEN']
     @twilio_client.account.sms.messages.create(
