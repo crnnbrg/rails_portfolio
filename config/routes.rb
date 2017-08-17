@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   end
 
   post 'verifications' => 'verifications#create'
+  put 'verifications' => 'verifications#verify'
 end
