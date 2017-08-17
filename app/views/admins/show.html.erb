@@ -1,0 +1,23 @@
+<h1><%= @user.email %></h1>
+
+<% if @user.comments.any? %>
+  <h4>Here are the reviews from this user:</h4>
+
+  <ul>
+    <% @user.comments.each do |comment| %>
+      <li>
+        <%= comment.review %>
+        <br>
+        <%= link_to "Delete", project_comment_path(@user, comment),
+                                 :data => {:confirm => "Are you sure?",
+                                                :method => "delete"} %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no reviews from this user!</p>
+<% end %>
+
+<%= button_to "Cancel my account", registration_path(user.email), data: { confirm: "Are you sure?" }, method: :delete %>
+
+ <p><%= link_to "Return to projects", projects_path %></p>

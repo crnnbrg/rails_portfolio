@@ -6,11 +6,13 @@
   <ul>
     <% @project.comments.each do |comment| %>
       <li>
-        <%= comment.review %> |
+        <%= comment.review %>
+        <% if user_signed_in? %>|
         <%= link_to "Edit", edit_project_comment_path(@project, comment) %> |
         <%= link_to "Delete", project_comment_path(@project, comment),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
+                                                <% end %>
       </li>
     <% end %>
   </ul>
@@ -18,10 +20,12 @@
   <p>There are no reviews yet!</p>
 <% end %>
 
-
+<% if user_signed_in? %>
+<% if current_user.admin? %>
 <p><%= link_to "Add a comment", new_project_comment_path(@project) %></p>
  <p><%= link_to "Delete", project_path(@project),
                           :data => {:confirm => "Are you sure?",
                                     :method => "delete"} %></p>
-
+<% end %>
+<% end %>
   <p><%= link_to "Return to projects", projects_path %></p>

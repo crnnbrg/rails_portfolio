@@ -4,12 +4,16 @@
   <ul>
     <% @projects.each do |project| %>
       <li><%= link_to project.title, project_path(project) %></li>
-        
+
       <br>
       <br>
         <%= project.created_at%>
     <% end %>
   </ul>
 
-  <hr>
-   <%= link_to "New Project", new_project_path %>
+<% if user_signed_in? %>
+  <% if current_user.admin? %>
+    <hr>
+     <%= link_to "New Project", new_project_path %>
+  <% end %>
+<% end %>
