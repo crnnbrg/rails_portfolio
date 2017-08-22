@@ -29,13 +29,13 @@ module RailsPorfolio
     config.generators.system_tests = nil
     ActionMailer::Base.smtp_settings = {
 
-      address: 'smtp.gmail.com',
+      address: 'smtp.mailgun.org',
       port: 587,
-      domain: 'mail.google.com',
-      authentication: 'login',
-      enable_starttls_auto: true,
-      user_name: 'tradedevlopment@gmail.com',
-      password: 'dummypass'
+      domain: 'postmaster@sandbox4b3fd3499cd74ad38e3ccc91d24523b0.mailgun.org',
+      authentication: :plain,
+
+      user_name: 'postmaster@sandbox4b3fd3499cd74ad38e3ccc91d24523b0.mailgun.org',
+      password: 'b66506fb921578eeee44962b831cb567'
     }
   end
 end
