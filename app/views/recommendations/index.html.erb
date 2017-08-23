@@ -2,6 +2,6 @@
 
   <ul>
     <% @recommendations.each do |recommendation| %>
-      <li><%= recommendation.name %></li>
+    <li><%= link_to recommendation.name, recommendation_path(recommendation) %></li>
     <% end %>
   </ul>
