@@ -1,0 +1,10 @@
+<h1>Recomendations</h1>
+
+  <ul>
+    <% @recommendations.each do |recommendation| %>
+      <li><%= recommendation.name %></li>
+      <li><%= recommendation.job_description %></li>
+      <li><%= recommendation.email %></li>
+      <li><%= recommendation.phone %></li>
+    <% end %>
+  </ul>
