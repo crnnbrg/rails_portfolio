@@ -16,3 +16,23 @@
   width: 500px;
   height: 450px;
 }
+
+.online a {
+  color: grey;
+  text-decoration: none;
+}
+
+.online a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.online p {
+  color: white;
+}
+
+img {
+  object-fit: cover;
+  width: 100%;
+  height: 400px;
+}

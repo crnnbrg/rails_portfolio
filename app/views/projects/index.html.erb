@@ -1,17 +1,26 @@
+<div class="about_div">
+<div class="front_img">
+<%= image_tag "port_img.jpg" %>
+</div>
+<hr>
+<div class="about_div">
+  <h1>About Me</h1>
+  <p>My name is Paul Nderitu.
+I am a Self made entrepreneur, and an upcoming Software Engineer at Moringa School. I am a dreamer, and I believe that technology is the future.
+If you want to flourish beyond your wildest dreams, I suggest you ask me about technology for your idea or business.
+Click Here For more info.</p>
+</div>
+<hr>
 <h1>Projects</h1>
-<%= image_tag "kitchen.jpg" %>
+
 <br>
 
-  <ul>
+
     <% @projects.each do |project| %>
 
-      <li><%= link_to project.title, project_path(project) %></li>
-
-      <br>
-      <br>
-        <%= project.created_at%>
+      <br><%= link_to project.title, project_path(project) %><br><%= project.created_at%><br>
     <% end %>
-  </ul>
+
 
 
 
