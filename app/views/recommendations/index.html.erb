@@ -1,7 +1,13 @@
 <h1>Recomendations</h1>
-
+  <% if @recommendations.any? %>
   <ul>
     <% @recommendations.each do |recommendation| %>
     <li><%= link_to recommendation.name, recommendation_path(recommendation) %></li>
     <% end %>
   </ul>
+<% else %>
+  <p>0 Recommendations</P>
+<% end %>
+  <hr>
+
+   <%= link_to "New Recommendation", new_recommendation_path %>

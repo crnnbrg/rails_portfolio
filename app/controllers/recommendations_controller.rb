@@ -1,17 +1,14 @@
 class RecommendationsController < ApplicationController
   def index
-    @recomendations = Recommendation.all
-    render :index
+    @recommendations = Recommendation.all
   end
 
   def show
     @recommendation = Recommendation.find(params[:id])
-    render :show
   end
 
   def new
     @recommendation = Recommendation.new
-    render :new
   end
 
   def create
