@@ -10,13 +10,14 @@
   <% end %>
 
   <%= form_for @recommendation do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :job_description %>
-    <%= f.text_field :job_description %>
-    <%= f.label :email %>
-    <%= f.email_field :email %>
-    <%= f.label :phone %>
-    <%= f.text_field :phone %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
+    <%= f.label :job_description %><br>
+    <%= f.text_field :job_description %><br>
+    <%= f.label :email %><br>
+    <%= f.email_field :email %><br>
+    <%= f.label :phone %><br>
+    <%= f.text_field :phone %><br>
+    <br>
     <%= f.submit  %>
   <% end %>
