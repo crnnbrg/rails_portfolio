@@ -2,11 +2,12 @@
 <div class="front_img">
 <%= image_tag "port_img.jpg" %>
 </div>
+</div>
 <hr>
 <div class="about_div">
   <h1>About Me</h1>
   <p>My name is Paul Nderitu.
-I am a Self made entrepreneur, and an upcoming Software Engineer at Moringa School. I am a dreamer, and I believe that technology is the future.
+I am a Self made entrepreneur, and an upcoming Software Engineer at <a href=http://www.moringaschool.com/>Moringa School</a>. I am a dreamer, and I believe that technology is the future.
 If you want to flourish beyond your wildest dreams, I suggest you ask me about technology for your idea or business.
 Click Here For more info.</p>
 </div>
@@ -16,10 +17,15 @@ Click Here For more info.</p>
 <br>
 
 
-    <% @projects.each do |project| %>
-
-      <br><%= link_to project.title, project_path(project) %><br><%= project.created_at%><br>
+    <div class="row">
+      <% @projects.each do |project| %>
+    <div class="col-md-4">
+      <br><%= link_to project.title, project_path(project) %><br>
+      <%= link_to image_tag project.picture_url.to_s, class: 'project_icon'%><br>
+      <%= project.created_at%><br>
+    </div>
     <% end %>
+  </div>
 
 
 
@@ -28,8 +34,9 @@ Click Here For more info.</p>
   <% if current_user.admin? %>
     <hr>
 
-     <%= link_to "New Project", new_project_path %>
+     <%= link_to "New Project", new_project_path %><br>
      <%= link_to "New Recommendation", new_recommendation_path %>
+
 
   <% end %>
 <% end %>

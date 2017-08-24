@@ -40,7 +40,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     flash[:notice] = 'Project delete successfull!'
-    redirect_to projects_path(@project)
+    redirect_to projects_path
   end
 
   private
