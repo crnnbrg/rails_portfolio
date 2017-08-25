@@ -23,6 +23,7 @@ Click Here For more info.</p>
       <br><%= link_to project.title, project_path(project) %><br>
       <%= link_to image_tag project.picture_url.to_s, class: 'project_icon'%><br>
       <%= project.created_at%><br>
+      <%= link_to "Delete", project_path(project), method: :delete, data: { confirm: "Sure?" }%>
     </div>
     <% end %>
   </div>

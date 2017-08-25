@@ -31,7 +31,7 @@
 <%= link_to "Add a comment", new_project_comment_path(@project) %>
 <% if current_user.admin? %>
 
- <p><%= link_to "Delete", project_path(@project),
+ <p><%= link_to "Delete", @project,
                           :data => {:confirm => "Are you sure?",
                                     :method => "delete"} %></p>
 <% end %>
