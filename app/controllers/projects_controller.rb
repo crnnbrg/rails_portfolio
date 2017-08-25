@@ -15,7 +15,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       flash[:notice] = 'Project added successfully!'
-      redirect_to projects_path(@project)
+      respond_to do |format|
+        format.html { redirect_to brands_path(@project) }
+        format.js
+      end
     else
       render :new
     end

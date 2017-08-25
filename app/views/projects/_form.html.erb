@@ -1,6 +1,6 @@
 <%= render "layouts/errors", :object => @project %>
 
-  <%= form_for @project do |f| %>
+  <%= form_for @project, remote: true do |f| %>
 
     <%= f.label :link %>
     <%= f.text_field :link %>
