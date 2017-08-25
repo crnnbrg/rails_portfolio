@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
     if @project.save
       flash[:notice] = 'Project added successfully!'
       respond_to do |format|
-        format.html { redirect_to brands_path(@project) }
+        format.html { redirect_to projects_path(@project) }
         format.js
       end
     else
@@ -42,7 +42,7 @@ class ProjectsController < ApplicationController
   def destroy
     @project = Project.find(params[:id])
     @project.destroy
-    flash[:notice] = 'Project delete successfull!'
+    flash[:notice] = 'Project destroyed successfully!'
     redirect_to projects_path
   end
 
