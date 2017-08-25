@@ -35,7 +35,7 @@ Click Here For more info.</p>
   <% if current_user.admin? %>
     <hr>
 
-     <%= link_to "New Project", new_project_path %><br>
+     <%= link_to "New Project", new_project_path, id: "new_link", remote: true%><br>
      <%= link_to "New Recommendation", new_recommendation_path %>
 
 
