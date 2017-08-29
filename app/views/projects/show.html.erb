@@ -14,13 +14,16 @@
     <% @project.comments.each do |comment| %>
       <li>
         <%= comment.review %>
-        <% if current_user.id == comment.user_id %>|
+        <% if current_user && current_user.id == comment.user_id %>|
         <%= link_to "Edit", edit_project_comment_path(@project, comment) %> |
         <%= link_to "Delete", project_comment_path(@project, comment),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
                                                 <% end %>
       </li>
+    <% end %>
+    <% if !user_signed_in? %>
+    <p>Sign in to comment - <a href="/users/sign_in">Sign in</a></p>
     <% end %>
   </ul>
 <% else %>
