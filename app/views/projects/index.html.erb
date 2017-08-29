@@ -1,44 +1,34 @@
-<div class="about_div">
 <div class="front_img">
-<%= image_tag "port_img.jpg" %>
-</div>
-</div>
-<hr>
 <div class="about_div">
-  <h1>About Me</h1>
+  <br>
+  <div class="img_thumb">
+<%= image_tag "portpic.jpg", class: "paul-img img-circle img-responsive"%>
+</div>
+  <h1>Who Am I?</h1>
+
   <p>My name is Paul Nderitu.
 I am a Self made entrepreneur, and an upcoming Software Engineer at <a href=http://www.moringaschool.com/>Moringa School</a>. I am a dreamer, and I believe that technology is the future.
 If you want to flourish beyond your wildest dreams, I suggest you ask me about technology for your idea or business.
 Click Here For more info.</p>
 </div>
-<hr>
-<h1>Projects</h1>
-
+  </div>
+<div class="app">
+<h1>Web Applications</h1>
+<p>Kindly sign up and review your application of choice. Always glad to hear from you.</p>
 <br>
-
-
     <div class="row">
       <div class="projects" id="old_projects">
       <% @projects.each do |project| %>
     <div class="col-md-4">
-      <br><%= link_to project.title, project_path(project) %><br>
+      <br>Visit: <%= link_to project.title, project_path(project) %><br>
       <%= link_to image_tag project.picture_url.to_s, class: 'project_icon'%><br>
       <%= project.created_at%><br>
-      <%= link_to "Delete", project_path(project), method: :delete, data: { confirm: "Sure?" }%>
     </div>
     <% end %>
+
   </div>
   </div>
   <hr>
-
-  <h2>Just Added</h2>
-   <div class="projects" id="added_projects">
-
-   </div>
-   <hr>
-
-
-
 
 <div class="new_project">
 
@@ -51,4 +41,5 @@ Click Here For more info.</p>
 
   <% end %>
 <% end %>
+</div>
 </div>

@@ -21,59 +21,54 @@ crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <div class="nav nav-bar" style="background-color:#ff6600; text-align:center;">
+    <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/projects">EL-Portfolio</a>
+      </div>
 
-    <div class="testr">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/projects">Projects <span class="sr-only">(current)</span></a></li>
+          <li><a href="#">comments</a></li>
+          <li><a href="">show</a></li>
 
-
-    <div class="nav nav-bar nav" style="background-color:#ff6600; text-align:center;">
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header">
-    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-    <a class="navbar-brand" href="/projects">EL-Portfolio</a>
-  </div>
-
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="/projects">Projects <span class="sr-only">(current)</span></a></li>
-      <li><a href="#">comments</a></li>
-      <li><a href="">show</a></li>
-
-      <li><a href="#">jobs</a></li>
-      <li><a href="/recommendations">Recommendations</a></li>
-
-</ul>
-    <ul class="nav navbar-nav navbar-right">
-<div class="online">
-  <% if user_signed_in? %>
-  <p>Hello, <%= current_user.email %></p>
-  <%= button_to "Logout", destroy_user_session_path, :method => 'delete', class: "btn btn-default" %>
-  <% end %>
-  <% if !user_signed_in? %>
-  <p><%=link_to "sign up", new_user_registration_path%> OR
-  <%=link_to "log in", new_user_session_path%></p>
-  <% end %>
-</div>
+          <li><a href="#">jobs</a></li>
+          <li><a href="/recommendations">Recommendations</a></li>
 
     </ul>
-  </div><!-- /.navbar-collapse -->
-</div><!-- /.container-fluid -->
-</nav>
-</div>
-</div>
+        <ul class="nav navbar-nav navbar-right">
+    <div class="online">
+      <% if user_signed_in? %>
+      <p>Hello, <%= current_user.email %></p>
+      <%= button_to "Logout", destroy_user_session_path, :method => 'delete', class: "btn btn-default" %>
+      <% end %>
+      <% if !user_signed_in? %>
+      <p><%=link_to "sign up", new_user_registration_path%> OR
+      <%=link_to "log in", new_user_session_path%></p>
+      <% end %>
+    </div>
 
-<div class="app" id="main">
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+    </nav>
+    </div>
+
+    <div class="main">
     <p><%= notice %></p>
     <p><%= alert %></p>
     <%= yield %>
-</div>
+    </div>
 
 <div class="container-fluid">
       <div class="row">
@@ -89,7 +84,7 @@ crossorigin="anonymous"></script>
 
 
 
-                  <%= image_tag "portpic.jpg", class: "img-circle img-responsive",  alt:"...", style:"width:20%; height:20p%"  %>
+                  <%= image_tag "portpic.jpg", class: "img-circle img-responsive",  alt:"...", style:"width:20%; height:20%"  %>
                 </a>
 
                 <a href="mailto:paulnderitu17@gmail.com">Feedback</a><br>
@@ -196,9 +191,6 @@ crossorigin="anonymous"></script>
     </div>
   </div>
         <!--end of container-->
-
-
-
 
   </body>
 </html>
