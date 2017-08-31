@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave'
-gem 'will_paginate'
+gem 'will_paginate', '> 3.0'
 gem 'devise'
 gem 'twilio-ruby', '~> 4.0.0'
 gem 'phonelib'

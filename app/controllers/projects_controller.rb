@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
+    @projects = Project.all.paginate(per_page: 3, page: params[:page])
   end
 
   def show
