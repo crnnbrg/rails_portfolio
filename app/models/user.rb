@@ -5,7 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :comments, dependent: :delete_all
 
-  validates_uniqueness_of :phone
   validates :phone, phone: { possible: false, allow_blank: true, types: [:mobile] }
 
   def needs_mobile_number_verifying?
