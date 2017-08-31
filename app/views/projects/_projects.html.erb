@@ -1,0 +1,9 @@
+
+<% @projects.each do |project| %>
+<div class="col-md-4">
+<br>Visit: <%= link_to project.title, project_path(project) %><br>
+<%= link_to image_tag project.picture_url.to_s, class: 'project_icon'%><br>
+<%= project.created_at%><br>
+</div>
+<% end %>
+<%= will_paginate @projects %>
