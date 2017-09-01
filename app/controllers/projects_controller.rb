@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all.paginate(per_page: 3, page: params[:page])
+    @projects = Project.all.order('created_at DESC').paginate(per_page: 3, page: params[:page])
     respond_to do |format|
       format.html
       format.js
