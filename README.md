@@ -1,24 +1,25 @@
-# README
+# Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+by: [Paul Nderitu](https://github.com/paulnderitu)
 
-Things you may want to cover:
+[view deployed]()
 
-* Ruby version
+## Technologies used
 
-* System dependencies
+[`Ruby`](https://www.ruby-lang.org/en/) [`Rails 5.1.3`](http://guides.rubyonrails.org/getting_started.html) [`RSpec 3.6`](http://rspec.info/) [`Postgres`](https://www.postgresql.org/) [`Bootstrap`](https://v4-alpha.getbootstrap.com/)
 
-* Configuration
+## Running the app
 
-* Database creation
+1. Clone the repo: `$ git clone [URL]`
 
-* Database initialization
+2. Install dependencies: `$ bundle`
 
-* How to run the test suite
+3. Create the database `$ rails db:setup`
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Run the app: `$ rails s`
 
-* Deployment instructions
+5. Navigate to [http://localhost:3000/](http://localhost:3000/)
 
-* ...
+Use `$ rspec` to run tests
+
+
