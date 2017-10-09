@@ -1,11 +1,11 @@
 <h1>Recomendations</h1>
-  <% if @recommendations.any? %>
-  <ol>
-    <% @recommendations.each do |recommendation| %>
-    <li><%= link_to recommendation.name, recommendation_path(recommendation) %></li><br>
-    <% end %>
-  </ol>
+<% if @recommendations.any? %>
+<ol>
+  <% @recommendations.each do |recommendation| %>
+  <li><%= link_to recommendation.name, recommendation_path(recommendation) %></li><br>
+  <% end %>
+</ol>
 <% else %>
-  <p>0 Recommendations</P>
+<p>0 Recommendations</P>
 <% end %>
-  <hr>
+<hr>

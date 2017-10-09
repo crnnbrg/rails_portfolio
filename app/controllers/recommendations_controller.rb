@@ -14,6 +14,7 @@ class RecommendationsController < ApplicationController
   def create
     @recommendation = Recommendation.new(recommendation_params)
     if @recommendation.save
+      flash[:notice] = 'Recommendation created successfully!'
       redirect_to recommendations_path
     else
       render :new
@@ -33,6 +34,13 @@ class RecommendationsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @recommendation = Recommendation.find(params[:id])
+    @recommendation.destroy
+    flash[:notice] = 'Recommendation destroyed successfully!'
+    redirect_to recommendations_path
   end
 
   private

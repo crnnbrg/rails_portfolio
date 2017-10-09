@@ -1,11 +1,21 @@
-<h1>Name: <%= @recommendation.name %></h1>
-<h3>Job Description: <%= @recommendation.job_description %></h3>
-<h3>Email: <%= @recommendation.email %></h3>
-<h3>Phone: <%= @recommendation.phone %></h3>
+<h1>Name:
+  <%= @recommendation.name %></h1>
+<h3>Job Description:
+  <%= @recommendation.job_description %></h3>
+<h3>Email:
+  <%= @recommendation.email %></h3>
+<h3>Phone:
+  <%= @recommendation.phone %></h3>
 
-<% if current_user.admin?%>
+<%if user_signed_in?%>
+<% if current_user.admin? %>
+<p><%=link_to "New Recommendation", new_recommendation_path(@recommendation) %></p>
 
 <p><%= link_to "Edit", edit_recommendation_path(@recommendation) %></p>
+<p><%= link_to "Delete", @recommendation,
+                            :data => {:confirm => "Are you sure?",
+                                      :method => "delete"} %></p>
+<%end%>
 <%end%>
 
-  <p><%= link_to "Return to recommendations", recommendations_path %></p>
+<p><%= link_to "Return to recommendations", recommendations_path %></p>
