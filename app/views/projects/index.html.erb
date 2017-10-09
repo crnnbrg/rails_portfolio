@@ -1,82 +1,79 @@
 <div class="front_img">
-<div class="about_div">
-  <br>
-  <div class="img_thumb">
-<%= image_tag "portfolio.png", class: "paul-img img-circle img-responsive"%>
-</div>
-  <h1>Who Am I?</h1>
-
-  <p>My name is Paul Nderitu.
-I am a Self made entrepreneur, and a professional Software Engineer. I am a dreamer; and I believe that technology is the future.
-If you want to flourish beyond your wildest dreams, I suggest you ask me about technology for your idea or business.
-<a href="https://paulnderitu.github.io/portfolio/">Click Here</a> For more Repos.</p>
-</div>
+  <div class="about_div">
+    <br>
+    <div class="img_thumb">
+      <%= image_tag "portfolio.png", class: "paul-img img-circle img-responsive"%>
+    </div>
+    <div class="bio">
+      <h1>Who Am I?</h1>
+      <p class="text-justify">My name is Paul Nderitu.
+        I am a Self made entrepreneur, and a professional Software Engineer. I am a dreamer, and I believe that technology is the future.
+        If you want to flourish beyond your wildest dreams, I suggest you ask me about technology for your idea or business.
+        <a href="https://paulnderitu.github.io/portfolio/" class="header-link">Click Here</a> For more Repos.</p>
+        <br>
+        <div class="down-arrow padding-top-15">
+        <a href="#about" class="smoothScroll">
+          <img src="https://www.servicewiz.com/swizz/resources/css/images/arrow1.png" class="animated infinite fadeInDown"></a>
+        </div>
+      </div>
+    </div>
   </div>
-
-    <div class="row">
-        <h1>Tools I love</h1>
+  <div class="container">
+    <div class="container">
+      <div class="row tools center-align" id="about">
+        <br>
+        <h2>Tools I love</h2>
         <hr>
-         <div>
+        <div>
           <a href="http://atom.io/"><%= image_tag "atomicon.jpg", class: "soft"%></a>
           <a href="https://github.com/"><%= image_tag "githubicon.png", class: "soft"%></a>
           <a href="https://git-scm.com/"><%= image_tag "giticon.png", class: "soft"%></a>
           <a href="https://jsfiddle.net/"><%= image_tag "jsfiddleicon.png", class: "soft"%></a>
           <a href="https://www.android.com/"><%= image_tag "androidicon.png", class: "soft"%></a>
           <a href="http://fontawesome.io/"><%= image_tag "fontawesomeicon.png", class: "soft"%></a>
-
-
         </div>
-    </div>
-    <!--end of row-->
-
-    <hr>
-    <div class="row">
-      <div class="tools">
-        <h1>Proficient Skills in: </h1>
-        <hr>
-        <a href="https://www.w3schools.com/html/html5_intro.asp"><%= image_tag "htmlicon.jpg", class: "soft"%></a>
-        <a href="https://www.w3schools.com/css/css3_intro.asp"><%= image_tag "cssicon.png", class: "soft"%></a>
-        <a href="https://www.w3schools.com/js/"><%= image_tag "javascripticon.jpg", class: "soft"%></a>
-        <a href="https://jquery.com/"><%= image_tag "jqueryicon.png", class: "soft"%></a>
-        <a href="https://www.ruby-lang.org/en/"><%= image_tag "rubyonrailsicon.jpg", class: "soft"%></a>
-        <a href="https://www.ruby-lang.org/en/"><%= image_tag "railsicon.png", class: "soft"%></a>
-
       </div>
-      <!--end of tools-->
+      <!--end of row-->
+      <hr>
+      <br>
+      <div class="row skills">
+        <div class="tools center-align">
+          <h2>Proficient Skills in</h2>
+          <hr>
+          <a href="https://www.w3schools.com/html/html5_intro.asp"><%= image_tag "htmlicon.jpg", class: "soft"%></a>
+          <a href="https://www.w3schools.com/css/css3_intro.asp"><%= image_tag "cssicon.png", class: "soft"%></a>
+          <a href="https://www.w3schools.com/js/"><%= image_tag "javascripticon.jpg", class: "soft"%></a>
+          <a href="https://jquery.com/"><%= image_tag "jqueryicon.png", class: "soft"%></a>
+          <a href="https://www.ruby-lang.org/en/"><%= image_tag "rubyonrailsicon.jpg", class: "soft"%></a>
+          <a href="https://www.ruby-lang.org/en/"><%= image_tag "railsicon.png", class: "soft"%></a>
+        </div>
+        <!--end of tools-->
+      </div>
+      <!--end of row-->
+      <hr>
     </div>
-    <!--end of row-->
-    <hr>
-
-<div class="webapps">
-  <div class="webap">
-    <h1>Web Applications</h1>
-    <p>Kindly <a href="sign up"> <%=link_to "sign up", new_user_registration_path%></a> and review any/all of the applications below. Always glad to hear your ideas or suggestions.</p>
   </div>
-</div>
-<div class="app">
-
-<br>
-
-
+  <div class="webapps container center-align">
+    <div class="webap">
+      <h2>Web Applications</h2>
+      <p>Kindly <a href="sign up"><%=link_to "sign up", new_user_registration_path%></a> and review any/all of the applications below. Always glad to hear your ideas or suggestions.</p>
+    </div>
+  </div>
+  <div class="app">
+    <br>
     <div class="row">
       <div class="projects" id="old_projects">
         <%= render 'projects' %>
-  </div>
-
-
-  </div>
-  <hr>
-
-<div class="new_project">
-
-<% if user_signed_in? %>
-  <% if current_user.admin? %>
+      </div>
+    </div>
     <hr>
-
-     <%= link_to "New Project", new_project_path, id: "new_link", remote: true%><br>
-  <%= link_to "New Recommendation", new_recommendation_path %>
-
-  <% end %>
-<% end %>
-</div>
-</div>
+    <div class="new_project">
+      <% if user_signed_in? %>
+      <% if current_user.admin? %>
+      <hr>
+      <%= link_to "New Project", new_project_path, id: "new_link", remote: true%><br>
+      <%= link_to "New Recommendation", new_recommendation_path %>
+      <% end %>
+      <% end %>
+    </div>
+  </div>

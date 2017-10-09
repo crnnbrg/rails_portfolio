@@ -1,47 +1,49 @@
-<h2>Click here:
-  <a href="<%= @project.link %>"><%= @project.title%></a>
-</h2>
-<%= image_tag @project.picture_url.to_s, class: 'project_image'%>
-<br>
-<h2>Technologies:
-  <%= @project.skill %></h1>
-<br>
-<br>
+<div class="recommendation_index">
+  <h2>Click here:
+    <a href="<%= @project.link %>"><%= @project.title%></a>
+  </h2>
+  <%= image_tag @project.picture_url.to_s, class: 'project_image'%>
+  <br>
+  <h2>Technologies:
+    <%= @project.skill %></h1>
+  <br>
+  <br>
 
-<% if @project.comments.any? %>
-<h4>Here are the reviews for this project:</h4>
+  <% if @project.comments.any? %>
+  <h4>Here are the reviews for this project:</h4>
 
-<ul>
-  <% @project.comments.each do |comment| %>
-  <li>
-    <%= comment.review %>
-    <% if current_user && current_user.id == comment.user_id %>|
-    <%= link_to "Edit", edit_project_comment_path(@project, comment) %>
-    |
-    <%= link_to "Delete", project_comment_path(@project, comment),
+  <ul>
+    <% @project.comments.each do |comment| %>
+    <li>
+      <%= comment.review %>
+      <% if current_user && current_user.id == comment.user_id %>|
+      <%= link_to "Edit", edit_project_comment_path(@project, comment) %>
+      |
+      <%= link_to "Delete", project_comment_path(@project, comment),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
+      <% end %>
+    </li>
     <% end %>
-  </li>
-  <% end %>
-  <% if !user_signed_in? %>
-  <p>Sign in to comment -
-    <a href="/users/sign_in">Sign in</a>
-  </p>
-  <% end %>
-</ul>
+    <% if !user_signed_in? %>
+    <p>Sign in to comment -
+      <a href="/users/sign_in">Sign in</a>
+    </p>
+    <% end %>
+  </ul>
 <% else %>
-<p>There are no reviews yet!</p>
-<% end %>
+  <p>There are no reviews yet!</p>
+  <% end %>
 
-<% if user_signed_in? %>
-<%= link_to "Add a comment", new_project_comment_path(@project) %>
-<% if current_user.admin? %>
-<p><%= link_to "Edit", edit_project_path(@project) %></p>
+  <% if user_signed_in? %>
+  <%= link_to "Add a comment", new_project_comment_path(@project) %>
+  <% if current_user.admin? %>
+  <p><%= link_to "Edit", edit_project_path(@project) %></p>
 
-<p><%= link_to "Delete", @project,
+  <p><%= link_to "Delete", @project,
                           :data => {:confirm => "Are you sure?",
                                     :method => "delete"} %></p>
-<% end %>
-<% end %>
-<p><%= link_to "Return to projects", projects_path %></p>
+  <% end %>
+  <% end %>
+  <p><%= link_to "Return to projects", projects_path %></p>
+</div>

@@ -1,94 +1,161 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
+@import "bootstrap-sprockets";
+@import url( 'https://fonts.googleapis.com/css?family=Roboto');
+@import url( 'https://fonts.googleapis.com/css?family=Roboto+Condensed');
+/* mobile */
+@media only screen and (max-width: 768px) {
+  .bio {
+    width: 85%;
+    margin: auto;
+    color: white;
 
+    h1 {
+      color: black;
+    }
+  }
+
+  .about_div {
+    margin-top: -5%;
+  }
+
+  .front_img {
+    height: 300px;
+  }
+
+  .soft {
+    height: 15%;
+    width: 15%;
+    margin: auto;
+  }
+
+  .skills,
+  .tools {
+    text-align: center;
+  }
+  //   .form-control {
+  //     width: 200px;
+  //     margin: auto;
+  //   }
+  //   .form-container {
+  //   margin: auto;
+  //   width: 100%;
+  // }
+}
+/*desktop*/
+@media only screen and (min-width: 768px) {
+  .bio {
+    width: 50%;
+    margin: auto;
+    color: white;
+    height: 850px;
+  }
+
+  .soft {
+    height: 100px;
+    width: 100px;
+  }
+
+  .form-container {
+    margin: auto;
+    width: 25%;
+  }
+}
+/*helpers*/
+.center-align {
+  text-align: center;
+}
+
+.padding-top-15 {
+  padding-top: 15%;
+}
+/*global styles*/
 body {
   font-size: 18px;
+  overflow: none;
+  font-family: 'Roboto', sans-serif;
 }
 
-.main {
-  text-align: center;
-  background-color: #f6f6ef;
+.navbar-brand,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
-.img_thumb {
-  text-align: center;
-  width: 20%;
-  height: 20%;
-  margin-left: 350px;
-  margin-top: 15%;
+.navbar-brand {
+  font-size: 20px;
 }
 
-.app {
-  text-align: center;
-  background-color: #f6f6ef;
-  width: 70%;
-  margin-left: 15%;
+.navbar-inverse .navbar-nav > li > a {
+  font-size: 14px;
 }
 
-.soft {
+a {
+  outline: 0;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.paul-img {
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  border: 2px solid white;
+}
+
+.paul-img-footer {
   height: 100px;
   width: 100px;
+  margin: auto;
+  border: 2px solid white;
 }
 
 .front_img {
-  background: url(paralax.jpeg)no-repeat center center fixed;
-  text-align: center;
-  height: 850px;
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("paralax.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
-}
-
-.img-circle img-responsive {
   text-align: center;
+  height: 760px;
 }
-
-.project_image {
-  width: 500px;
-  height: 450px;
-}
-
-.project_icon {
-  height: 150px;
-  width: 220px;
-  border-width: 2px;
-}
-
-.online a {
-  color: grey;
-  text-decoration: none;
-}
-
-.online a:hover {
-  color: white;
-  text-decoration: none;
-}
-
-.online p {
-  color: white;
-}
-// img {
-//   object-fit: cover;
-//   width: 100%;
-//   height: 400px;
-// }
 
 .about_div {
-  text-align: center;
-  color: #fff;
-  width: 60%;
   margin-top: -2%;
-  margin-left: 290px;
 }
 
-.webapps {
-  background: image-url('paralax1.jpeg')no-repeat center center fixed;
+.img_thumb {
+  margin-top: 10%;
+}
+
+.down-arrow {
+  img {
+    width: 10%;
+    height: 10%;
+  }
+}
+
+#main {
+  min-height: 100vh;
+}
+
+li {
+  list-style-type: none;
+}
+
+.recommendation_index {
   text-align: center;
-  height: 250px;
-  background-size: cover;
 }
 
-.webap {
-  padding-top: 80px;
+.usr_logs {
   color: white;
+  padding-top: 9px;
+  padding-right: 10px;
 }
 //FOOTER
 
@@ -186,6 +253,7 @@ body {
 
 .footer-distributed .footer-center p a {
   color: #5383d3;
+  // color: #ffb380;
   text-decoration: none;
 }
 /* Footer Right */
@@ -247,15 +315,73 @@ body {
   }
 }
 
-#main {
-  min-height: 100vh;
+.a-footer {
+  font-size: 18px;
 }
 
-.paul-img {
+.fa:hover {
+  color: #5383d3;
+}
+
+.img-circle img-responsive {
+  text-align: center;
+}
+
+.project_image {
+  width: 500px;
+  height: 450px;
+}
+
+.project_icon {
   height: 150px;
-  width: 150px;
+  width: 220px;
+  border-width: 2px;
 }
 
-li {
-  list-style-type: none;
+.online a {
+  color: grey;
+  text-decoration: none;
+}
+
+.online a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.online p {
+  color: white;
+}
+
+.app {
+  text-align: center;
+  background-color: #f6f6ef;
+  width: 70%;
+  margin-left: 15%;
+}
+
+.webapps {
+  background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("paralax1.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;
+  height: 600px;
+  text-align: center;
+  height: 250px;
+  width: 100%;
+}
+
+.webap {
+  padding-top: 80px;
+  color: white;
+}
+
+.header-link {
+  background-color: black;
+  color: white;
+
+  &:hover {
+    color: white;
+  }
 }

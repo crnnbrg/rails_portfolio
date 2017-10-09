@@ -1,3 +1,5 @@
+<div class="recommendation_index">
+
 <h1>Name:
   <%= @recommendation.name %></h1>
 <h3>Job Description:
@@ -7,15 +9,17 @@
 <h3>Phone:
   <%= @recommendation.phone %></h3>
 
+
+
 <%if user_signed_in?%>
 <% if current_user.admin? %>
-<p><%=link_to "New Recommendation", new_recommendation_path(@recommendation) %></p>
-
-<p><%= link_to "Edit", edit_recommendation_path(@recommendation) %></p>
-<p><%= link_to "Delete", @recommendation,
+<p><%=link_to "New", new_recommendation_path(@recommendation), class: 'btn btn-info' %>
+<%= link_to "Edit", edit_recommendation_path(@recommendation), class: 'btn btn-success' %>
+<%= link_to "Delete", @recommendation,
                             :data => {:confirm => "Are you sure?",
-                                      :method => "delete"} %></p>
+                                      :method => "delete"}, class: 'btn btn-danger' %>
 <%end%>
 <%end%>
 
-<p><%= link_to "Return to recommendations", recommendations_path %></p>
+<%= link_to "Return to recommendations", recommendations_path, class: 'btn btn-primary' %></p>
+</div>
