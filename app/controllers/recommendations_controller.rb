@@ -25,6 +25,16 @@ class RecommendationsController < ApplicationController
     render :edit
   end
 
+  def update
+    @recommendation = Recommendation.find(params[:id])
+    if @recommendation.update(recommendation_params)
+      flash[:notice] = 'Recommendation updated successfully!'
+      redirect_to recommendations_path(@recommendation)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def recommendation_params
