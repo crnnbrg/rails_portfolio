@@ -20,6 +20,11 @@ class RecommendationsController < ApplicationController
     end
   end
 
+  def edit
+    @recommendation = Recommendation.find(params[:id])
+    render :edit
+  end
+
   private
 
   def recommendation_params

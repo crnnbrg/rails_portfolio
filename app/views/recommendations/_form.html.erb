@@ -1,0 +1,14 @@
+<%= render "layouts/errors", :object => @recommendation %>
+
+<%= form_for @recommendation do |f| %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name %><br>
+  <%= f.label :job_description %><br>
+  <%= f.text_field :job_description %><br>
+  <%= f.label :email %><br>
+  <%= f.email_field :email %><br>
+  <%= f.label :phone %><br>
+  <%= f.text_field :phone %><br>
+  <br>
+  <%= f.submit  %>
+<% end %>
