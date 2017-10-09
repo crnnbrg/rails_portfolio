@@ -3,4 +3,6 @@
 <h3>Email: <%= @recommendation.email %></h3>
 <h3>Phone: <%= @recommendation.phone %></h3>
 
+<p><%= link_to "Edit", edit_recommendation_path(@recommendation) %></p>
+
   <p><%= link_to "Return to recommendations", recommendations_path %></p>
