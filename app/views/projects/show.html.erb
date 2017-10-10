@@ -10,27 +10,34 @@
   <br>
 
   <% if @project.comments.any? %>
-  <h4>Here are the reviews for this project:</h4>
+  <h2>Here are the reviews for this project:</h2>
+<div class="reviews_show">
 
-  <ul>
+
+
+  <ol>
     <% @project.comments.each do |comment| %>
-    <li>
-      <%= comment.review %>
+
+      <li><%= comment.user_id %>. <%= comment.review %></li>
       <% if current_user && current_user.id == comment.user_id %>|
       <%= link_to "Edit", edit_project_comment_path(@project, comment) %>
       |
       <%= link_to "Delete", project_comment_path(@project, comment),
                                  :data => {:confirm => "Are you sure?",
                                                 :method => "delete"} %>
+                                                </li>
       <% end %>
-    </li>
+
     <% end %>
+
+    </ol>
+    </div>
     <% if !user_signed_in? %>
     <p>Sign in to comment -
       <a href="/users/sign_in">Sign in</a>
     </p>
     <% end %>
-  </ul>
+
 <% else %>
   <p>There are no reviews yet!</p>
   <% end %>
