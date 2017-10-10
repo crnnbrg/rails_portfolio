@@ -7,6 +7,7 @@
 	<ol>
 		<% @recommendations.each do |recommendation| %>
 		<li><%= link_to recommendation.name, recommendation_path(recommendation) %></li><br>
+    
 		<% end %>
 	</ol>
 	<% else %>

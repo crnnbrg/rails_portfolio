@@ -9,6 +9,7 @@
   </ul>
   <% end %>
   <%= form_for @recommendation do |f| %>
+  <%= f.file_field :picture %><br>
   <%= f.label :name %><br>
   <%= f.text_field :name, class:"form-control" %><br>
   <%= f.label :job_description %><br>
@@ -19,6 +20,7 @@
   <%= f.text_field :phone, class:"form-control" %><br>
   <%= f.label :url %><br>
   <%= f.text_field :url, class:"form-control" %><br>
+
   <br>
   <%= f.submit "Submit", class:"btn btn-success" %>
   <% end %>
