@@ -1,16 +1,16 @@
 <div class="recommendation_index">
-  
+
 <%= image_tag @recommendation.picture_url.to_s, class: 'project_image'%>
 <h1>Name:
   <%= @recommendation.name %></h1>
 <h3>Job Description:
   <%= @recommendation.job_description %></h3>
 <h3>Email:
-  <%= @recommendation.email %></h3>
+  <%= link_to @recommendation.email %></h3>
 <h3>Phone:
   <%= @recommendation.phone %></h3>
 <h3>Url:
-  <%= @recommendation.url %></h3>
+  <%= link_to @recommendation.url %></h3>
 
 
 
